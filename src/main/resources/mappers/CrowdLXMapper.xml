@@ -11,7 +11,7 @@
         SELECT 
         	worker_id
         	<!-- , sns_id -->
-        	, "name"
+        	, name
         	, email
         	, birth
         	, phone
@@ -248,6 +248,13 @@
 		WHERE task_id = #{task_id} and task_order = #{taskNum}
 	</update>
 	
+	<update id="updateTutorialResult" parameterType="workerDto">
+		UPDATE worker_info
+		SET 
+			tuto_sts = 'Y'
+		WHERE user_id = #{user_id}
+	</update>
+	
 	<insert id="insertData" parameterType="workerDto">
 		INSERT INTO public.pairwise_test2 (
 			image_id1
@@ -264,7 +271,7 @@
 	
 	<select id="getTotalTaskCnt" parameterType="java.lang.String" resultType="int">
 		select 
-			count(a.*)
+			count(a.task_id)
 		from (
 			select 
 				distinct task_id
@@ -274,7 +281,7 @@
 	
 	<select id="getEvalTaskCnt" parameterType="java.lang.String" resultType="int">
 		select 
-			count(a.*)
+			count(a.task_id)
 		from (
 			select 
 				distinct task_id
@@ -309,7 +316,7 @@
 			a.task_id 
 			, count(b.eval_result) as eval_cnt
 			, case when count(b.eval_result) > 0 then '평가완료' else '대기' end as eval_result
-			, ARRAY_TO_STRING(ARRAY_AGG(c.name),',') as eval_worker
+			, c.name as eval_worker
 		from (
 			select 
 				task_id 

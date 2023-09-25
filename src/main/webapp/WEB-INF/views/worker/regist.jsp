@@ -122,18 +122,17 @@
 									<option value="12">12</option>
 								</select>
 								-
-								<input type="text" name="birth3" id="birth3" class="col-sm-2 form-control" style="display:inline-block" maxlength="2" required>
-								</select>
+								<input type="text" name="birth3" id="birth3" class="col-sm-2 form-control" style="display:inline-block" maxlength="2" required>								
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="phoneNumber" class="col-sm-3 control-label">연락처(핸드폰)<span class="necessary">*</span></label>
+							<label for="phoneNumber" class="col-sm-6 control-label">핸드폰<span class="necessary">* (번호 입력시 -를 생략해주세요.)</span></label>
 							<div class="col-sm-9">
-								<input type="phoneNumber" name="phone" id="phone" placeholder="연락처를 입력해 주십시오." class="form-control" required>
+								<input type="number" name="phone" id="phone" placeholder="연락처를 입력해 주십시오." class="form-control" required>
 							</div>
 						</div>						
 						<div class="form-group">
-							<label for="phoneNumber" class="col-sm-3 control-label">주소<span class="necessary">*</span></label>
+							<label for="phoneNumber" class="col-sm-9 control-label">주소<span class="necessary">* (주소는 비용 지급을 위해 등본상의 주소지로 입력해주세오.)</span></label>
 							<div class="col-sm-9">
 								<input type="text" name="address" id="address" placeholder="주소를 입력해 주십시오." class="form-control" required>
 							</div>

@@ -140,6 +140,14 @@ public class CrowdLXDaoImpl implements CrowdLXDao {
 	}
 		
 	@Override
+	public int updateTutorialResult(WorkerDto workerInfo) {
+		
+		int result = sqlSession.update("CrowdLXMapper.updateTutorialResult", workerInfo);
+		
+		return result;
+	}
+	
+	@Override
 	public int insertTaskList(WorkerDto workerInfo) {
 		
 		int result = sqlSession.insert("CrowdLXMapper.insertTaskList", workerInfo);

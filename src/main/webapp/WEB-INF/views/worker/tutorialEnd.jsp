@@ -79,13 +79,15 @@
 									<div class="finish-cont-detail">
 										<p style="margin-top: 20px; text-align: center;">
 											평가 유효성 : 
-											<c:if test="${evalValid == 'Y'}">적합(${correct}/5)</c:if>
+											<c:if test="${evalValid == 'Y'}">적합(${correct}/5)
+												<br/><br/>튜토리얼을 적합하게 통과하였습니다.<br/>이제부터 태스크 평가를 수행할 수 있습니다.
+											</c:if>
 											<c:if test="${evalValid == 'N'}"><font style="color:red;">부적합(${correct}/5)</font></c:if>
 											<c:if test="${evalValid == 'N'}">
 											<div style="color:red;margin: 10px 100px 10px 100px;">
 												당신은 5개의 랜덤 유효성 테스트 중 ${5-correct}개를 틀렸기 때문에 유효성 부적합이 되었습니다.												
 											</div>
-											</c:if>
+											</c:if>											 
 										</p>
 									</div>
 								</div>

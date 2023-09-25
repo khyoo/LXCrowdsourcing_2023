@@ -259,7 +259,7 @@
         </button>
       </div>
       <div class="modal-body">
-        현재 진행중인 태스크가 취소됩니다. 그래도 진행하시겠습니까?
+        튜토리얼을 중단하시겠습니까?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger move" data-dismiss="modal">YES</button>        
@@ -276,7 +276,7 @@
         <h5 class="modal-title">거리영상기반 안전환경 설문조사</h5>        
       </div>
       <div class="modal-body text-center">
-        태스크 ${taskId}을 시작합니다.
+        튜토리얼을 시작합니다.
       </div>
       <div class="modal-footer justify-content-center">                
         <button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>

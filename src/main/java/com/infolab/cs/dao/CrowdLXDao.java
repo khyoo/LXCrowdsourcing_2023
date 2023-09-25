@@ -35,6 +35,8 @@ public interface CrowdLXDao {
 	
 	public int updateTaskResult(WorkerDto workerInfo);
 	
+	public int updateTutorialResult(WorkerDto workerInfo);
+	
 	public int insertTaskList(WorkerDto workerInfo);
 	
 	public int insertData(WorkerDto workerInfo);

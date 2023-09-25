@@ -128,6 +128,14 @@ public class CrowdLXService {
 		return result;
 	}
 	
+
+	public int updateTutorialResult(WorkerDto workerInfo) {
+		
+		int result = dataDao.updateTutorialResult(workerInfo);
+		
+		return result;
+	}
+	
 	
 	public int insertData(WorkerDto workerInfo) {
 		

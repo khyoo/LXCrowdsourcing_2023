@@ -30,8 +30,10 @@
 			</a></li>
 
 		<!-- Nav Item - Pages Collapse Menu -->
-		<!-- <li class="nav-item"><a class="nav-link btn_newEval" href="/evaluation/g2"> -->
+		<li class="nav-item"><a class="nav-link btn_newEval" href="/evaluation/g2">
+		<!-- 
 		<li class="nav-item"><a class="nav-link btn_newEval" href="#" onClick="javascript:showTutorialAlert();">
+		 -->
 				<i class="fas fa-fw fa-chart-area"></i> <span>새태스크 평가</span>
 			</a></li>
 

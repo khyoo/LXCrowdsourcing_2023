@@ -591,6 +591,8 @@ public class MainController {
 				String evalValid = "Y";
 				if (correct < 4) {
 					evalValid = "N";
+				} else {
+					int re = cs.updateTutorialResult(workerInfo);
 				}
 				workerInfo.setEval_score(correct);	
 				workerInfo.setEval_result(evalValid);
@@ -600,7 +602,6 @@ public class MainController {
 				
 				model.addAttribute("correct", correct);
 				model.addAttribute("evalValid", evalValid);
-				
 				
 				return "worker/tutorialEnd";
 			}
