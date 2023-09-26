@@ -21,7 +21,7 @@
 
  	<script>
 	 	function image404(id) {
-			$('#'+id).attr("src", "http://info.rlog.kr:35000/images/111018349902.jpg");	
+			$('#'+id).attr("src", "http://info.rlog.kr:35000/images/1154370200_back_1200_2022.jpg");	
 		}
 			
  	</script>
