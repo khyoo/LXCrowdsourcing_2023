@@ -111,9 +111,9 @@
 			from (
 				(select pair_id, 'N' as pre_yn, '' as answer from pairwise_info where pair_id between #{startIdx} and #{endIdx} order by pair_id)
 				union
-				(SELECT pretrained_id as pair_id, 'Y' as pre_yn, answer FROM pretrained_info ORDER BY RANDOM() LIMIT 5)	
+				(SELECT pretrained_id as pair_id, 'Y' as pre_yn, answer FROM pretrained_info ORDER BY RAND() LIMIT 5)	
 			) a
-			ORDER BY RANDOM()
+			ORDER BY RAND()
 		) b)
 	</insert>
 	
@@ -184,7 +184,7 @@
 			where task_id not in (select task_id from result_info where eval_result = 'Y')
 			order by task_id
 		) a
-		order by random()
+		order by rand()
 		limit 1
 	</select>
 	
