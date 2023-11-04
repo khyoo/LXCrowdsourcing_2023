@@ -101,22 +101,6 @@
 		WHERE user_id = #{user_id}		
 	</update>
 		
-	<insert id="insertTaskList" parameterType="workerDto">
-		insert into task_list (task_id, task_order, pair_id, pre_yn, answer)
-		(select 
-			#{task_id} as task_id, (ROW_NUMBER() OVER()) AS task_order, b.*
-		from (
-			select 
-				a.*
-			from (
-				(select pair_id, 'N' as pre_yn, '' as answer from pairwise_info where pair_id between #{startIdx} and #{endIdx} order by pair_id)
-				union
-				(SELECT pretrained_id as pair_id, 'Y' as pre_yn, answer FROM pretrained_info ORDER BY RAND() LIMIT 5)	
-			) a
-			ORDER BY RAND()
-		) b)
-	</insert>
-	
 	<select id="getPretrainedList" parameterType="java.lang.String" resultType="resultMap">
         SELECT 
         	pretrained_id
@@ -264,7 +248,22 @@
 			, #{imgId2}	
 		)		
 	</insert>
-	
+			
+	<insert id="insertTaskList" parameterType="workerDto">
+		insert into task_list_tmp3 (task_id, task_order, pair_id, pre_yn, answer)
+		(select 
+			#{task_id} as task_id, (ROW_NUMBER() OVER()) AS task_order, b.*
+		from (
+			select 
+				a.*
+			from (
+				(select pair_id, 'N' as pre_yn, '' as answer from pairwise_230926 where pair_id between #{startIdx} and #{endIdx} order by pair_id)
+				union
+				(SELECT pretrained_id as pair_id, 'Y' as pre_yn, answer FROM pretrained_info ORDER BY RAND() LIMIT 5)	
+			) a
+			ORDER BY RAND()
+		) b)
+	</insert>
 	
 	<!-- ******************************************************** -->
 	<!-- Admin Page -->

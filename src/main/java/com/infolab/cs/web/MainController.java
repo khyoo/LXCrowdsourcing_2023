@@ -634,8 +634,36 @@ public class MainController {
 //	}
 	
 	
+	@RequestMapping(value = "/insertTaskList", method = RequestMethod.GET)
+	public String insertTaskList(Locale locale, Model model) {
+		logger.info("Controller(GET): /khyoo The client locale is {}.", locale);
+		
+		int len = 62658;
+		
+		WorkerDto wkr = new WorkerDto();
+
+		int startX = 1;
+		int endX = 50;
+		
+		int taskId = 1;
+		
+		for(int i=0; i<len/50; i++) {
+			wkr.setStartIdx(startX);
+			wkr.setEndIdx(endX);	
+			wkr.setTask_id(taskId);
+			
+			int result = cs.insertTaskList(wkr);
+			
+			startX += 50;
+			endX += 50;
+			taskId++;
+		}
+				
+		return "worker/privateTerms";
+	}
+	
 	@RequestMapping(value = "/validImage", method = RequestMethod.GET)
-	public String insertData(Model model, HttpServletRequest request) {
+	public String validImage(Model model, HttpServletRequest request) {
 		
 		List<LinkedHashMap<String, Object>> resultList = cs.getImageList();
 		

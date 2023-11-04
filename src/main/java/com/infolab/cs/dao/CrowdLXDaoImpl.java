@@ -148,19 +148,11 @@ public class CrowdLXDaoImpl implements CrowdLXDao {
 	}
 	
 	@Override
-	public int insertTaskList(WorkerDto workerInfo) {
-		
-		int result = sqlSession.insert("CrowdLXMapper.insertTaskList", workerInfo);
-		
-		return result;
-	}
-	
-	@Override
 	public int insertData(WorkerDto workerInfo) {
 				
 		List<Integer> rand1 = new ArrayList<Integer>();
 		
-		for(int i=1; i<=42360; i++) {
+		for(int i=1; i<=20886; i++) {
 			rand1.add(i);		
 		}
 		
@@ -202,7 +194,7 @@ public class CrowdLXDaoImpl implements CrowdLXDao {
 //				System.out.println(i +"��° : " + temp[0] + ", " + temp[1]);
 //			}
 			
-			for(int i=1; i<=42360; i++) {
+			for(int i=1; i<=20886; i++) {
 				rand1.add(i);		
 			}
 			
@@ -210,6 +202,14 @@ public class CrowdLXDaoImpl implements CrowdLXDao {
 			k = k - 2;
 		}
 		return 1;
+	}
+	
+	@Override
+	public int insertTaskList(WorkerDto workerInfo) {
+		
+		int result = sqlSession.insert("CrowdLXMapper.insertTaskList", workerInfo);
+		
+		return result;
 	}
 	
 	public int[] sort(int c1, int c2) {
