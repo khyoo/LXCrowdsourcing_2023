@@ -21,6 +21,7 @@ public class WorkerDto {
 	
 	private int taskNum;
 	
+	private int task_seq;
 	private int task_id;
 	private int worker_id;	
 	private String sns_id;

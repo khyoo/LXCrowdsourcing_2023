@@ -159,7 +159,7 @@ public class CrowdLXDaoImpl implements CrowdLXDao {
 		Collections.shuffle(rand1);		
 						
 		List<Object> result = new ArrayList<Object>();
-		int k = 6;
+		int k = 8;
 		int head, c1, c2;
 		
 		while (k >= 2) {

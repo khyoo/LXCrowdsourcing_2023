@@ -240,7 +240,7 @@
 	</update>
 	
 	<insert id="insertData" parameterType="workerDto">
-		INSERT INTO pairwise_test2 (
+		INSERT INTO pairwise_231101 (
 			image_id1
 			, image_id2
 		) VALUES (
@@ -250,16 +250,16 @@
 	</insert>
 			
 	<insert id="insertTaskList" parameterType="workerDto">
-		insert into task_list_tmp3 (task_id, task_order, pair_id, pre_yn, answer)
-		(select 
-			#{task_id} as task_id, (ROW_NUMBER() OVER()) AS task_order, b.*
-		from (
-			select 
+		INSERT INTO task_list_tmp3 (task_seq, task_id, task_order, pair_id, pre_yn, answer)
+		(SELECT 
+			(#{task_seq}+ROW_NUMBER() OVER()) AS task_seq, #{task_id} AS task_id, (ROW_NUMBER() OVER()) AS task_order, b.*
+		FROM (
+			SELECT 
 				a.*
-			from (
-				(select pair_id, 'N' as pre_yn, '' as answer from pairwise_230926 where pair_id between #{startIdx} and #{endIdx} order by pair_id)
-				union
-				(SELECT pretrained_id as pair_id, 'Y' as pre_yn, answer FROM pretrained_info ORDER BY RAND() LIMIT 5)	
+			FROM (
+				(SELECT pair_id, 'N' AS pre_yn, '' AS answer FROM pairwise_231101 WHERE pair_id BETWEEN #{startIdx} AND #{endIdx} ORDER BY pair_id)
+				UNION
+				(SELECT pretrained_id AS pair_id, 'Y' AS pre_yn, answer FROM pretrained_info ORDER BY RAND() LIMIT 5)	
 			) a
 			ORDER BY RAND()
 		) b)

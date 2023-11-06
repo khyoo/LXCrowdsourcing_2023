@@ -253,7 +253,7 @@ public class MainController {
 		
 		model.addAttribute("missionCnt", result.getMission_cnt());
 		model.addAttribute("missionPctge", String.format("%.2f", pctge));
-		model.addAttribute("reward", result.getMission_cnt()*1200);
+		model.addAttribute("reward", result.getMission_cnt()*2000);
 		
 		List<LinkedHashMap<String, Object>> resultList = cs.getResultInfoList(workerInfo);		
 		model.addAttribute("resultList", resultList);
@@ -280,9 +280,9 @@ public class MainController {
 			task_id = Integer.parseInt(taskId);
 		} else {
 			if (cs.getRandomTaskIdCnt() > 0) {
-				task_id = cs.getRandomTaskId();
+				task_id = 1392;//cs.getRandomTaskId();
 			} else {
-				task_id = 1;
+				task_id = 1392;
 			}
 		}		 
 				
@@ -402,7 +402,7 @@ public class MainController {
 				workerInfo.setEval_score(correct/5);
 				
 				String evalValid = "Y";
-				if (correct < 4) {
+				if (correct < 3) {
 					evalValid = "N";
 				}
 				workerInfo.setEval_score(correct);	
@@ -622,34 +622,36 @@ public class MainController {
 	
 	
 	
-//	@RequestMapping(value = "/insertData", method = RequestMethod.GET)
-//	public String insertData(Model model, HttpServletRequest request) {
-////		logger.info("pretrained The client locale is {}.", locale);
-//		
-//		WorkerDto workerInfo = new WorkerDto();
-//		
-//		int x = cs.insertData(workerInfo);
-//		
-//		return "worker/insertData";
-//	}
+	@RequestMapping(value = "/insertData", method = RequestMethod.GET)
+	public String insertData(Locale locale, Model model, HttpServletRequest request) {
+		logger.info("\"Controller(GET): /insertData", locale);
+		
+		WorkerDto workerInfo = new WorkerDto();
+		
+		int x = cs.insertData(workerInfo);
+		
+		return "worker/insertData";
+	}
 	
 	
 	@RequestMapping(value = "/insertTaskList", method = RequestMethod.GET)
 	public String insertTaskList(Locale locale, Model model) {
-		logger.info("Controller(GET): /khyoo The client locale is {}.", locale);
+		logger.info("Controller(GET): /insertTaskList", locale);
 		
-		int len = 62658;
+		int len = 167088;
 		
 		WorkerDto wkr = new WorkerDto();
 
 		int startX = 1;
 		int endX = 50;
 		
+		int taskSeq = 0;
 		int taskId = 1;
 		
 		for(int i=0; i<len/50; i++) {
 			wkr.setStartIdx(startX);
-			wkr.setEndIdx(endX);	
+			wkr.setEndIdx(endX);
+			wkr.setTask_seq(taskSeq);
 			wkr.setTask_id(taskId);
 			
 			int result = cs.insertTaskList(wkr);
@@ -657,6 +659,8 @@ public class MainController {
 			startX += 50;
 			endX += 50;
 			taskId++;
+			
+			taskSeq += 55;
 		}
 				
 		return "worker/privateTerms";
