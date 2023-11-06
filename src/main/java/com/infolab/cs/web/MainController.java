@@ -675,9 +675,9 @@ public class MainController {
 		System.out.println("**********");
 		for(int i=0; i<resultList.size(); i++) {
 	        try {
-	            URL url = new URL("http://info.rlog.kr:35000/images/"+resultList.get(i).get("img_name"));
+	            URL url = new URL("http://info.rlog.kr:35000/images/"+resultList.get(i).get("image_name"));
 	            BufferedImage img = ImageIO.read(url); 
-	            ///System.out.println("OK : " + resultList.get(i).get("img_name"));
+	            System.out.println("OK : " + resultList.get(i).get("image_name"));
 	        } catch (IOException e) {
 	         //e.printStackTrace();
 	        	System.out.println("********************************************");
@@ -685,6 +685,7 @@ public class MainController {
 	        	System.out.println("********************************************");
 	        }
 		}
+		System.out.println("Valid OK");
 		
 		return "validImage";
 	}

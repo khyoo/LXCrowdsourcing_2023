@@ -129,8 +129,8 @@
 			, case when a.pre_yn = 'N' then (select image_id2 from pairwise_info where pair_id = a.pair_id) else (select image_id2 from pretrained_info where pretrained_id = a.pair_id) end as image_id2
 			</if>
 			<if test="gname != null and 'g2'.equals(gname)">
-			, case when a.pre_yn = 'N' then (select image_name1 from pairwise_230926 where pair_id = a.pair_id) else (select image_id1 from pretrained_info where pretrained_id = a.pair_id) end as image_id1 
-			, case when a.pre_yn = 'N' then (select image_name2 from pairwise_230926 where pair_id = a.pair_id) else (select image_id2 from pretrained_info where pretrained_id = a.pair_id) end as image_id2
+			, case when a.pre_yn = 'N' then (select image_name1 from pairwise_231101 where pair_id = a.pair_id) else (select image_id1 from pretrained_info where pretrained_id = a.pair_id) end as image_id1 
+			, case when a.pre_yn = 'N' then (select image_name2 from pairwise_231101 where pair_id = a.pair_id) else (select image_id2 from pretrained_info where pretrained_id = a.pair_id) end as image_id2
 			</if>
 		from task_list a		
 		where a.task_id = #{task_id}
@@ -140,8 +140,8 @@
 	<select id="getTutorialTaskList" resultType="resultMap">
 		select
 			a.*
-			, case when a.pre_yn = 'N' then (select image_name1 from pairwise_230926 where pair_id = a.pair_id) else (select image_id1 from pretrained_info where pretrained_id = a.pair_id) end as image_name1 
-			, case when a.pre_yn = 'N' then (select image_name2 from pairwise_230926 where pair_id = a.pair_id) else (select image_id2 from pretrained_info where pretrained_id = a.pair_id) end as image_name2
+			, case when a.pre_yn = 'N' then (select image_name1 from pairwise_231101 where pair_id = a.pair_id) else (select image_id1 from pretrained_info where pretrained_id = a.pair_id) end as image_name1 
+			, case when a.pre_yn = 'N' then (select image_name2 from pairwise_231101 where pair_id = a.pair_id) else (select image_id2 from pretrained_info where pretrained_id = a.pair_id) end as image_name2
 		from tutorial_list a
 		order by a.tutorial_order		
 	</select>
@@ -381,12 +381,11 @@
 	
 	<select id="getImageList" parameterType="java.lang.String" resultType="resultMap">
 		SELECT 
-			id
-			, panoid
-			, road_no
-			, nn_land_renm
-			, img_name
-		FROM image_list_lx
-		order by panoid, img_name 	
+			id, 
+			panoid, 
+			image_name, 
+			etc, 
+			part
+		FROM pano_list3;	
 	</select>
 </mapper>
