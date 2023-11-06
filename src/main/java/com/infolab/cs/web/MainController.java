@@ -280,9 +280,9 @@ public class MainController {
 			task_id = Integer.parseInt(taskId);
 		} else {
 			if (cs.getRandomTaskIdCnt() > 0) {
-				task_id = 1392;//cs.getRandomTaskId();
+				task_id = cs.getRandomTaskId();
 			} else {
-				task_id = 1392;
+				task_id = 1;
 			}
 		}		 
 				
