@@ -168,6 +168,7 @@
 									<option value="BK04">국민은행</option>
 									<option value="BK03">기업은행</option>
 									<option value="BK88">신한은행</option>
+									<option value="BK99">하나은행</option>
 									<option value="BK37">전북은행</option>
 									<option value="BK11">농협</option>
 									<option value="BK71">우체국</option>	

@@ -84,8 +84,7 @@
 			, phone=#{phone}
 			, sex=#{sex}
 			, age=#{age}
-			, address=#{address}
-			, "comments"=''
+			, address=#{address}			
 			<!-- , sns_id=#{sns_id} -->
 			, bank_code=#{bank_code}
 			, bank_name=#{bank_name}

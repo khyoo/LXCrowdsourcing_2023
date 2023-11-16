@@ -124,7 +124,7 @@
 						<div class="col-1 h4">[${taskNum}/55]</div>
 					</div>
 					<div class="row">					
-						<div class="col-12" style="color: #666666; text-align: center; font-size: 3em; font-weight: bold; padding-bottom: 20px;">어느쪽이 범죄로 부터 안전하다고 생각하십니까?</div>						
+						<div class="col-12" style="color: #666666; text-align: center; font-size: 3em; font-weight: bold; padding-bottom: 20px;">어느쪽이 더 걷기 좋다고 생각하십니까?</div>						
 						<div class="col-12" style="color: #ff0000; text-align: center; font-size: 1em; padding-bottom: 20px;">* 태스크당 일치(=)를 10회 이상 선택시 재평가 대상이 될 수 있습니다.</div>
 					</div>
 					<div class="row">
@@ -240,7 +240,7 @@
         </button>
       </div>
       <div class="modal-body">
-        범죄로 부터 안전한 사진을 선택해 주십시오.
+      	걷기 좋은 사진을 선택해 주십시오.
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>        

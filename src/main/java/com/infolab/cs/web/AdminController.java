@@ -53,7 +53,7 @@ public class AdminController {
 		model.addAttribute("missionTotalCnt", totalTaskCnt);
 		model.addAttribute("missionCnt", evalTaskCnt);
 		model.addAttribute("missionPctge", String.format("%.2f", pctge));
-		model.addAttribute("reward", evalTaskCnt*1200);
+		model.addAttribute("reward", evalTaskCnt * 2000);
 		
 		List<LinkedHashMap<String, Object>> resultList = cs.getResultInfoList(new WorkerDto());		
 		model.addAttribute("resultList", resultList);
@@ -81,7 +81,7 @@ public class AdminController {
 		model.addAttribute("missionTotalCnt", totalTaskCnt);
 		model.addAttribute("missionCnt", evalTaskCnt);
 		model.addAttribute("missionPctge", String.format("%.2f", pctge));
-		model.addAttribute("reward", evalTaskCnt*1200);
+		model.addAttribute("reward", evalTaskCnt * 2000);
 		
 		List<LinkedHashMap<String, Object>> resultList = cs.getTaskAggList();		
 		model.addAttribute("resultList", resultList);
@@ -129,7 +129,7 @@ public class AdminController {
 		model.addAttribute("missionTotalCnt", totalTaskCnt);
 		model.addAttribute("missionCnt", evalTaskCnt);
 		model.addAttribute("missionPctge", String.format("%.2f", pctge));
-		model.addAttribute("reward", evalTaskCnt*1200);
+		model.addAttribute("reward", evalTaskCnt * 2000);
 		
 		List<LinkedHashMap<String, Object>> resultList = cs.getUserList();		
 		model.addAttribute("resultList", resultList);
