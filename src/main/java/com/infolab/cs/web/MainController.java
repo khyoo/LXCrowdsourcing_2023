@@ -588,7 +588,7 @@ public class MainController {
 				workerInfo.setEval_score(correct/5);
 				
 				String evalValid = "Y";
-				if (correct < 4) {
+				if (correct < 3) {
 					evalValid = "N";
 				} else {
 					int re = cs.updateTutorialResult(workerInfo);

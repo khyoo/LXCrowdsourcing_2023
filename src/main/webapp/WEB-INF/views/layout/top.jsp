@@ -4,7 +4,7 @@
 <!-- Topbar -->
 <nav class="navbar navbar-expand navbar-light bg-white topbar static-top shadow">
 
-	<span class="navbar-title ml-3">거리영상기반 안전환경 설문조사</span>
+	<span class="navbar-title ml-3">거리영상기반 보행환경 설문조사</span>
 
 	<!-- Topbar Navbar -->
 	<ul class="navbar-nav ml-auto">

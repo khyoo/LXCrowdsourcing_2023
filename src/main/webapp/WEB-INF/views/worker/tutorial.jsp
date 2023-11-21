@@ -273,7 +273,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header justify-content-center" style="display:relative;">
-        <h5 class="modal-title">거리영상기반 안전환경 설문조사</h5>        
+        <h5 class="modal-title">거리영상기반 보행환경 설문조사</h5>        
       </div>
       <div class="modal-body text-center">
         튜토리얼을 시작합니다.
